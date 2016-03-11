@@ -2,7 +2,7 @@ html, body {
 	margin: 0;
 	padding: 0;
 	font-size: 14px;
-	font-family: "Microsoft Yahei", "Helvetica", "WenQuanYi Micro Hei";
+	font-family: "Microsoft Yahei", "Helvetica", "WenQuanYi Micro Hei", "Roboto";
 	background: #F3F3F3;
 }
 header {
@@ -48,6 +48,8 @@ form, .card {
 }
 .info-value {
 	margin-bottom: 1.5rem;
+	word-break: break-word;
+	word-wrap: break-word;
 }
 .cve tbody tr:nth-child(odd) {
 	background: #F9F9F9;
