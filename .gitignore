@@ -1,2 +1,7 @@
+# for flask
 *.pyc
 instance/
+
+# for mac osx
+.idea
+.DS_Store
