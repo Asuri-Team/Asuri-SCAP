@@ -14,7 +14,7 @@ function Pager(selector) {
 Pager.prototype.more = function() {
     this.domMore.innerText = "加载中...";
     var frag = document.createDocumentFragment();
-    for (var i = this.current; i < this.current + this.data.length; i++) {
+    for (var i = this.current; i < this.current + this.count; i++) {
         if (!this.data[i] || this.data[i][0] == "EOF") break;
         var tr = document.createElement("tr"),
             td1 = document.createElement("td"),
