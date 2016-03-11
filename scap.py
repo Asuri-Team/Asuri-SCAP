@@ -70,7 +70,19 @@ def search_cve(cveid):
     cursor.execute(sql)
     cwe = cursor.fetchall()
 
-    return render_template('detail.html', title=TITLE, cve=cve, cpe=cpe, refer=refer, cwe=cwe)
+    sql = "select msfid,msf_script_file,msf_script_name from map_cve_msf where cveid = '%s' " % cveid
+    cursor.execute(sql)
+    msf = cursor.fetchall()
+
+    sql = "select exploitdbid,exploitdbscript from map_cve_exploitdb where cveid = '%s'" % cveid
+    cursor.execute(sql)
+    expdb = cursor.fetchall()
+
+    sql = "select nessus_script_id,nessus_script_file,nessus_script_name,nessus_script_family from map_cve_nessus where cveid = '%s'" % cveid
+    cursor.execute(sql)
+    nessus = cursor.fetchall()
+
+    return render_template('detail.html', title=TITLE, cve=cve, cpe=cpe, refer=refer, cwe=cwe,msf=msf,expdb=expdb,nessus=nessus)
 
 
 if __name__ == '__main__':

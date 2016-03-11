@@ -44,6 +44,25 @@
                 {{ row[0]}}</br>
                 {% endfor%}
             </div>
+            {% if expdb !=None %}
+                <div class="info-key">exploitdb</div>
+               {% for row in expdb %}
+                    <div class="info-value">
+                        exploit-db链接地址:<a href="https://www.exploit-db.com/exploits/{{ row[0] }}/">{{ row[0] }}</a></br>
+                        exploit-db脚本路径:{{ row[1]}}
+                    </div>
+                {% endfor %}
+            {% endif %}
+            {% if expdb !=None %}
+                <div class="info-key">Metasploit Framework</div>
+               {% for row in msf %}
+                    <div class="info-value">
+                        msf脚本:{{ row[0] }}</br>
+                        脚本路径:{{ row[1] }}</br>
+                        漏洞描述:{{ row[2] }}
+                    </div>
+                {% endfor %}
+            {% endif %}
         </div>
     </div>
 </body>
