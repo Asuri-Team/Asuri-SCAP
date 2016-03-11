@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
+    <meta name="renderer" content="webkit">
+    <meta http-equiv="Cache-Control" content="no-siteapp">
+    <link rel="stylesheet" href="static/style.css">
+    <title>{{ title }}</title>
+</head>
+<body>
+	<header>
+		<h1>{{ title }}
+			<a href='/search'>搜索</a>
+		</h1>
+	</header>
+    <div class="container">
+        <div class="card">
+            <div class="info-key">CVE编号</div>
+            <div class="info-value">{{ cve[0][0] }}</div>
+            <div class="info-key">描述</div>
+            <div class="info-value">{{ cve[0][1] }}</br>
+                {% for row in refer %}
+                <a href="{{ row[1]}}">{{ row[0]}}</a>
+                {% endfor%}
+            </div>
+            <div class="info-key">CWE</div>
+            <div class="info-value">
+                {% for row in cwe %}
+                {{ row[0]}}</br>
+                {% endfor%}
+            </div>
+            <div class="info-key">基础评分</div>
+            <div class="info-value">{{ cve[0][2] }}</div>
+            <div class="info-key">影响评分</div>
+            <div class="info-value">{{ cve[0][3] }}</div>
+            <div class="info-key">利用评分</div>
+            <div class="info-value">{{ cve[0][4] }}</div>
+            <div class="info-key">攻击渠道</div>
+            <div class="info-value">{{ cve[0][5] }}</div>
+            <div class="info-key">影响目标</div>
+            <div class="info-value">
+                {% for row in cpe %}
+                {{ row[0]}}</br>
+                {% endfor%}
+            </div>
+        </div>
+    </div>
+</body>
+</html>

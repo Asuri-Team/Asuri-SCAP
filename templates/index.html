@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
+    <meta name="renderer" content="webkit">
+    <meta http-equiv="Cache-Control" content="no-siteapp">
+    <link rel="stylesheet" href="static/style.css">
+    <title>{{ title }}</title>
+</head>
+<body>
+	<header>
+		<h1>{{ title }}
+			<a href='/search'>搜索</a>
+		</h1>
+	</header>
+    <div class="container">
+        <table cellspacing="0">
+            <thead>
+                <tr>
+                    <th width="33%">cve入库总数</th>
+                    <th width="33%">cpe入库总数</th>
+                    <th width="33%">cwe入库总数</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>{{ stat[0][0] }}</td>
+                    <td>{{ stat[0][1] }}</td>
+                    <td>{{ stat[0][2] }}</td>
+                </tr>
+            </tbody>
+        </table>
+        <table class="cve pager" data-count="40" data-src="cveList" cellspacing="0">
+            <thead>
+                <tr>
+                    <th class="cve-id">CVE编号</th>
+                    <th>漏洞简述</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr></tr>
+            </tbody>
+            <tfoot>
+                <tr>
+                    <td colspan="2">加载中...</td>
+                </tr>
+            </tfoot>
+        </table>
+    </div>
+    <script>
+        var cveList = [
+            {% for row in new %}
+            ["{{ row[0] }}", "{{ row[1] }}"],
+            {% endfor %}
+            ["EOF"]
+        ];
+    </script>
+    <script src="static/loaddata.js"></script>
+</body>
+</html>
