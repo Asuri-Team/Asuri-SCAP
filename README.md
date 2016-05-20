@@ -6,5 +6,3 @@ Asuri-SCAP只是一个简单的查询见面，用来检索SCAP库中的CVE漏洞
 来源如下：
 vFeed:https://github.com/toolswatch/vFeed
 
-或者，你可以使用Asuri提供的检索页面:http://182.254.240.180:8000/
-
