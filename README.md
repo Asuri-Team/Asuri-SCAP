@@ -28,6 +28,7 @@ config.py,update.sh中的路径需要自行配置
 
 SCAP是安全内容自动化协议的简称。
 大家熟知的CVE其实只是SCAP的一个部分，SCAP一共由7个自协议组成，分别是：
+
 |名称|全称|中文名|
 |----|----|------|
 |CVE|Common Vulnerabilities and Exposures|通用漏洞枚举|
